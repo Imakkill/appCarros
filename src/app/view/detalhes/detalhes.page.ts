@@ -55,10 +55,10 @@ export class DetalhesPage implements OnInit {
       this.router.navigate(['/home'])
     }
 
-    async presentAlert(header: string, message: string){
+    async presentAlert(subHeader: string, message: string){
       const alert = await this.alertController.create({
-        header: header,
-        subHeader: 'Garage',
+        header: 'Garage',
+        subHeader: subHeader,
         message: message,
         buttons: ['OK'],
       });
@@ -67,7 +67,7 @@ export class DetalhesPage implements OnInit {
     }
     async showConfirm() {
       const confirm = this.alertController.create({
-          message: 'Você será redirecionado para a PáginaPrincipal',
+          message: 'Você tem certeza',
           buttons: [
               {
                   text: 'Cancelar',

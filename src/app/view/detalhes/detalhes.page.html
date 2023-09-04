@@ -10,50 +10,44 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-item>
-      <ion-toggle (ionChange)="habilitar()" color="primary">Habilitar edição</ion-toggle>
-    </ion-item>
+      <ion-toggle (ionChange)="habilitar()" color="primary"></ion-toggle>
     <ion-item>
       <ion-label style="position: relative; font-size: 16px; margin-bottom: 8px; color: #333;" position="floating">
         Modelo
-        <span style="position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #007bff; transform: scaleX(0); transition: transform 0.2s ease;"></span>
       </ion-label>
       <ion-input [(ngModel)]="modelo" [disabled]="edicao"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="position: relative; font-size: 16px; margin-bottom: 8px; color: #333;" position="floating">
         Marca
-        <span style="position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #007bff; transform: scaleX(0); transition: transform 0.2s ease;"></span>
       </ion-label>
       <ion-input [(ngModel)]="marca" [disabled]="edicao"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="position: relative; font-size: 16px; margin-bottom: 8px; color: #333;" position="floating">
         Ano
-        <span style="position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #007bff; transform: scaleX(0); transition: transform 0.2s ease;"></span>
       </ion-label>
       <ion-input [(ngModel)]="ano" type="number" [disabled]="edicao"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="position: relative; font-size: 16px; margin-bottom: 8px; color: #333;" position="floating">
         Preço
-        <span style="position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #007bff; transform: scaleX(0); transition: transform 0.2s ease;"></span>
       </ion-label>
       <ion-input [(ngModel)]="price" type="number" [disabled]="edicao"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="position: relative; font-size: 16px; margin-bottom: 8px; color: #333;" position="floating">
         Carroceria
-        <span style="position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #007bff; transform: scaleX(0); transition: transform 0.2s ease;"></span>
       </ion-label>
       <ion-select [(ngModel)]="carroceria" interface="popover" placeholder="Selecione" [disabled]="edicao">
         <ion-select-option value="Hatch">Hatch</ion-select-option>
         <ion-select-option value="Sedã">Sedã</ion-select-option>
         <ion-select-option value="SUV">SUV</ion-select-option>
         <ion-select-option value="Pick-Up">Pick-Up</ion-select-option>
+        <ion-select-option value="Não Especificado">Não Especificado</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-button expand="full" (click)="salvar()" color="primary" [disabled]="edicao">Salvar</ion-button>
-    <ion-button expand="full" (click)="showConfirm()" color="danger" [disabled]="edicao">Excluir</ion-button>
+    <ion-button expand="block" (click)="salvar()" class="btn-salvar" [disabled]="edicao">Salvar</ion-button>
+    <ion-button expand="block" (click)="showConfirm()" color="danger" [disabled]="edicao">Excluir</ion-button>
   </ion-list>
 </ion-content>

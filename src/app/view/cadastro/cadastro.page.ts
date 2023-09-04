@@ -33,8 +33,8 @@ export class CadastroPage implements OnInit {
   }
   async presentAlert(header: string, message: string){
     const alert = await this.alertController.create({
-      header: header,
-      subHeader: 'Garage',
+      header: 'Garage',
+      subHeader: header,
       message: message,
       buttons: ['OK'],
     });
