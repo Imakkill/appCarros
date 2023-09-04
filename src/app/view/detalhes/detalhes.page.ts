@@ -39,12 +39,15 @@ export class DetalhesPage implements OnInit {
     }
   }
     salvar(){
-      if(this.modelo){
+      if(this.modelo && this.marca && this.ano){
         let novo: Carros = new Carros(this.modelo,this.marca, this.ano, this.price, this.carroceria);
         this.firebase.update(novo, this.carros.id);
+        this.presentAlert("Salvo", "Carro Salvo!");
         this.router.navigate(['/home']);
       }
-      else{}
+      else{
+        this.presentAlert("Erro", "Campos Obrigatórios!");
+      }
     }
 
     excluir(){
@@ -52,6 +55,16 @@ export class DetalhesPage implements OnInit {
       this.router.navigate(['/home'])
     }
 
+    async presentAlert(header: string, message: string){
+      const alert = await this.alertController.create({
+        header: header,
+        subHeader: 'Garage',
+        message: message,
+        buttons: ['OK'],
+      });
+  
+      await alert.present();
+    }
     async showConfirm() {
       const confirm = this.alertController.create({
           message: 'Você será redirecionado para a PáginaPrincipal',

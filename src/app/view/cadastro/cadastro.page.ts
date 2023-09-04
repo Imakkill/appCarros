@@ -21,10 +21,10 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
   cadastrar(){
-    if(this.modelo){
+    if(this.modelo && this.marca && this.ano){
       let novo: Carros = new Carros(this.modelo,this.marca, this.ano, this.price, this.carroceria);
       this.firebase.create(novo);
-      this.presentAlert("Salvo", "Contato Salvo!");
+      this.presentAlert("Salvo", "Carro Salvo!");
       this.router.navigate(['/home']);
     }
     else{
@@ -34,7 +34,7 @@ export class CadastroPage implements OnInit {
   async presentAlert(header: string, message: string){
     const alert = await this.alertController.create({
       header: header,
-      subHeader: 'Agenda de Contatos',
+      subHeader: 'Garage',
       message: message,
       buttons: ['OK'],
     });
