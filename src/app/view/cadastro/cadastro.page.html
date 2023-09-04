@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Garagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+      <ion-input label="Modelo" [(ngModel)]="modelo" class="custom-input"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Marca" [(ngModel)]="marca" class="custom-input"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-input label="Ano" [(ngModel)]="ano" class="custom-input"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Preço" [(ngModel)]="price" class="custom-input"></ion-input>
+    </ion-item>
+    <ion-select label="Carroceria"  [(ngModel)]="carroceria" label-placement="floating" fill="outline">
+      <ion-select-option value="Hatch">Hatch</ion-select-option>
+      <ion-select-option value="Sedã">Sedã</ion-select-option>
+      <ion-select-option value="SUV">SUV</ion-select-option>
+      <ion-select-option value="Pick-Up">Pick-Up</ion-select-option>
+    </ion-select>
+  <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+  </ion-list>
+</ion-content>

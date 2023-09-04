@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Garagem
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let carro of listaCarros">
+    <ion-item (click)="detalhar(carro)">
+      <ion-label>{{carro.modelo}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="irParaCadastrar()">
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

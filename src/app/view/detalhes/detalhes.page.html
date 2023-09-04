@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-toggle (ionChange)="habilitar()"> Habilitar edição</ion-toggle>
+    </ion-item>
+    <ion-item>
+    <ion-input label="Modelo" [(ngModel)]="modelo" disabled="{{edicao}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Marca" [(ngModel)]="marca" disabled="{{edicao}}"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-input label="Ano" [(ngModel)]="ano" type='number' disabled="{{edicao}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Preço" [(ngModel)]="price" type='number' disabled="{{edicao}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-select label="Carroceria"  [(ngModel)]="carroceria" label-placement="floating"  fill="outline">
+      <ion-select-option value="Hatch">Hatch</ion-select-option>
+      <ion-select-option value="Sedã">Sedã</ion-select-option>
+      <ion-select-option value="SUV">SUV</ion-select-option>
+      <ion-select-option value="Pick-Up">Pick-Up</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="block" (click)="salvar()" disabled="{{edicao}}">Salvar</ion-button>
+  <ion-button expand="block" (click)="showConfirm()" color="danger" disabled="{{edicao}}">Excluir</ion-button>
+  </ion-list>
+</ion-content>
